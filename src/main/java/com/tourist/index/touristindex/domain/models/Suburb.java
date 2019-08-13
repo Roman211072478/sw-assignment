@@ -5,10 +5,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
-@Table(name = "Suburb")
+@Table(name = "suburb")
 public class Suburb {
     //id,description,city
     @Id
@@ -19,7 +20,15 @@ public class Suburb {
     @NotNull
     private String description;
 
-    @OneToMany
-    @JoinColumn(name="city_id")
-    private List<City> city;
+    @ManyToOne
+    @JoinColumn
+    private City city;
+
+    @OneToMany(mappedBy = "suburb")
+    private Set<Incident> incidents;
+
+    @OneToMany(mappedBy = "suburb")
+    private Set<Review> reviews;
+
+
 }

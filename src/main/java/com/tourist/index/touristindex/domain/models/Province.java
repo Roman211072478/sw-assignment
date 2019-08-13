@@ -5,10 +5,13 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
-@Entity
+//
+
 @Data
-@Table(name = "Province")
+@Entity
+@Table(name = "province")
 public class Province {
     //id,description,country
     @Id
@@ -19,7 +22,10 @@ public class Province {
     @NotNull
     private String description;
 
-    @OneToMany
-    @JoinColumn(name="country_id")
-    private List<Country> country;
+    @OneToMany(mappedBy = "province")
+    private Set<City> cities;
+
+    @ManyToOne
+    @JoinColumn
+    private Country country;
 }

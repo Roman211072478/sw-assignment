@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "Credentials")
+@Table(name = "credentials")
 public class Credentials {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,8 @@ public class Credentials {
     @NotNull
     private String password;
 
-    @OneToOne
-    @JoinColumn(name="user_id")
+    @OneToOne(optional = false)
+    @NotNull
+    @JoinColumn
     private User user;
 }

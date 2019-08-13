@@ -4,10 +4,11 @@ import com.sun.istack.internal.NotNull;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
-@Table(name = "Country")
+@Table(name = "country")
 public class Country {
     //id,description
     @Id
@@ -17,4 +18,7 @@ public class Country {
     @Column(name = "description")
     @NotNull
     private String description;
+
+    @OneToMany(mappedBy = "country")
+    private Set<Province> province;
 }

@@ -4,10 +4,11 @@ import com.sun.istack.internal.NotNull;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
-@Table(name = "User")
+@Table(name = "user")
 public class User {
     //    id,name,email,role
     @Id
@@ -26,4 +27,10 @@ public class User {
     @Column(name = "role")
     @NotNull
     private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Review> reviews;
+
+    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
+    private Credentials credentials;
 }
