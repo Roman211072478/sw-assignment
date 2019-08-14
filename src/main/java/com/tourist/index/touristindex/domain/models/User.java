@@ -1,6 +1,8 @@
 package com.tourist.index.touristindex.domain.models;
 
 import com.sun.istack.internal.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,6 +13,10 @@ import java.util.Set;
 @Table(name = "user")
 public class User {
     //    id,name,email,role
+
+    public User() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
