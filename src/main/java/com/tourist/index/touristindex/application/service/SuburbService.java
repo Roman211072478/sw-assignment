@@ -14,7 +14,7 @@ public interface SuburbService {
 
     List<SuburbModel> findByCityId(final long id);
 
-    SuburbModel findOne(final long id);//NOPMD
+    SuburbModel findOne(final long id);
 
-    void delete(long id);//NOPMD
+    void delete(long id);
 }

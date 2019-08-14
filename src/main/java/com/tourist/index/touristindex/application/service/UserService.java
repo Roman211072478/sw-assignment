@@ -12,7 +12,7 @@ public interface UserService {
 
     List<UserModel> findAll();
 
-    UserModel findOne(long id);//NOPMD
+    UserModel findOne(long id);
 
-    void delete(long id);//NOPMD
+    void delete(long id);
 }

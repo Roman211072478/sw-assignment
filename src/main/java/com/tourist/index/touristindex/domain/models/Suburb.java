@@ -12,6 +12,10 @@ import java.util.Set;
 @Table(name = "suburb")
 public class Suburb {
     //id,description,city
+
+    public Suburb() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
