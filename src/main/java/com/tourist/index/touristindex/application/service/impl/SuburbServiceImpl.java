@@ -27,11 +27,11 @@ public class SuburbServiceImpl implements SuburbService {
     @Override
     public SuburbModel create(SuburbModel model) {
 
-        Suburb sub = new SuburbModel();
-        sub.setCity(model.getCity().getId())
-        sub.setDescription(model.getDescription())
-        sub.setId(model.getId())
-                .build();
+        Suburb sub = new Suburb();
+//        sub.setCity(model.getCity().getId())
+//        sub.setDescription(model.getDescription())
+//        sub.setId(model.getId())
+//                .build();
 
         final Suburb entity = suburbRepository.save(sub);
 
